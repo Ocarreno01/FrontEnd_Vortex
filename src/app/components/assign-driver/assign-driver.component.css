@@ -52,3 +52,11 @@
   background-color: #2196f3;
   color: white;
 }
+
+.info-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}

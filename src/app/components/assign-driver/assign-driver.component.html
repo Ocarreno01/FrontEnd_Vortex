@@ -3,7 +3,7 @@
   <div class="main-content">
     <h1>Asignar Conductor</h1>
 
-    <div class="form-section">
+    <div class="form-section" *ngIf="unassignedVehicles && unassignedVehicles.length>0">
       <label for="driver">Seleccionar Conductor:</label>
       <select id="driver" name="driver" [(ngModel)]="selectedDriver">
         <option value="">Seleccione</option>
@@ -13,7 +13,7 @@
       </select>
     </div>
 
-    <div class="form-section">
+    <div class="form-section" *ngIf="unassignedVehicles && unassignedVehicles.length>0">
       <label for="list">Listado de vehículos sin asignar</label>
       <table class="vehicle-table">
         <thead>
@@ -44,5 +44,9 @@
       <button class="assign-button" (click)="onAssingVehicles()">Asignar vehículos </button>
     </div>
 
+    <div class="form-section info-message"
+      *ngIf="!unassignedVehicles||( unassignedVehicles && unassignedVehicles.length === 0)">
+      No se encontraron vehiculos sin conductor asignado
+    </div>
   </div>
 </div>

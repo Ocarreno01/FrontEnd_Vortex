@@ -61,12 +61,12 @@ export class CreateVehicleComponent implements OnInit {
       this.homeService.createNewVehicle(vehicle).subscribe((response) => {
         console.log('response', response);
         if (response && response.status) {
-          alert('Conductor creado exitosamente');
+          alert('Vehiculo creado exitosamente');
           this.resetForm();
           return;
         }
         if (response && !response?.status) {
-          alert('Conductor registrado anteriormente');
+          alert('Vehiculo registrado anteriormente');
           return;
         }
         this.resetForm();
