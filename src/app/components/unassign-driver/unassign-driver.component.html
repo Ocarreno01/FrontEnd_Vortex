@@ -1,0 +1,52 @@
+<app-menu-bar></app-menu-bar>
+<div class="container">
+  <div class="main-content">
+    <h1>Desasignar conductor</h1>
+  </div>
+
+  <div class="form-section">
+    <label for="driver">Seleccionar Conductor:</label>
+    <select id="driver" name="driver" [(ngModel)]="selectedDriver" (change)="onSelectDriver()">
+      <option value="" disabled>Seleccione</option>
+      <option *ngFor="let driver of drivers" [value]="driver.id">
+        {{ driver.id }} - {{ driver.firstName }} {{ driver.lastName }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-section" *ngIf="vehicles.length > 0">
+    <label for="list">Listado de vehículos asignados</label>
+    <table class="vehicle-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Modelo</th>
+          <th>Placa</th>
+          <th>Capacidad</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehicle of vehicles">
+          <td>{{ vehicle.id }}</td>
+          <td>{{ vehicle.model }}</td>
+          <td>{{ vehicle.plate }}</td>
+          <td>{{ vehicle.ability }}</td>
+          <td>
+            <button (click)="onSelectVehicle(vehicle.id)"
+              [ngClass]="{'select-button': !selectedVehicleIds.includes(vehicle.id), 'unselect-button': selectedVehicleIds.includes(vehicle.id) }">
+              {{ selectedVehicleIds.includes(vehicle.id) ? "Deseleccionar" : "Seleccionar" }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="unassign-button" (click)="onUnassignVehicle()">Desasignar vehículos </button>
+
+  </div>
+
+  <div class="form-section info-message" *ngIf="selectedDriver && vehicles.length === 0">
+    Conductor sin vehículos asignados
+  </div>
+</div>

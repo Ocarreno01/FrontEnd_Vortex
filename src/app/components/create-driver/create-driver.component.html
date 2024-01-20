@@ -1,0 +1,59 @@
+<app-menu-bar></app-menu-bar>
+<div class="container">
+  <div class="main-content">
+    <h1>Crear conductor</h1>
+
+    <form [formGroup]="createDriverForm" (ngSubmit)="onCreateDriver()" class="driver-form">
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input type="number" formControlName="id" placeholder="Id" maxlength="4" />
+        <div class="error-messages">
+          <mat-error *ngIf="shouldShowError('id', 'required')">El id es requerido</mat-error>
+          <mat-error *ngIf="shouldShowError('id', 'min')">Solo valores positivos</mat-error>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="identification">Identificación</label>
+        <input type="text" formControlName="identification" placeholder="Identificacion" />
+        <div class="error-messages">
+          <mat-error *ngIf="shouldShowError('identification', 'required')">La identificacion es requerida</mat-error>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="firstName">Nombre</label>
+        <input type="text" formControlName="firstName" placeholder="Nombre" />
+        <div class="error-messages">
+          <mat-error *ngIf="shouldShowError('firstName', 'required')">El nombre es requerido</mat-error>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Apellido</label>
+        <input type="text" formControlName="lastName" placeholder="Apellido" />
+        <div class="error-messages">
+          <mat-error *ngIf="shouldShowError('lastName', 'required')">El apellido es requerido</mat-error>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Telefono</label>
+        <input type="text" formControlName="phone" placeholder="Telefono" />
+        <div class="error-messages">
+          <mat-error *ngIf="shouldShowError('phone', 'required')">El telefono es requerido</mat-error>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Dirección</label>
+        <input type="text" formControlName="address" placeholder="Dirección" />
+        <div class="error-messages">
+          <mat-error *ngIf="shouldShowError('address', 'required')">La dirección es requerido</mat-error>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-button">Crear conductor</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<aside [ngClass]="{ sidebar: isMenuOpen }">
+  <div class="menu-icon" (click)="toggleMenu()">☰</div>
+  <ul *ngIf="isMenuOpen">
+    <li><a routerLink="/home">Inicio</a></li>
+    <li><a routerLink="/createDriver">Crear conductor</a></li>
+    <li><a routerLink="/createVehicle">Crear vehiculo</a></li>
+    <li><a routerLink="/assignDriver">Asignar conductor</a></li>
+    <li><a routerLink="/unassignDriver">Desasignar conductor</a></li>
+  </ul>
+</aside>

@@ -1,0 +1,54 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+.vehicle-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.vehicle-table th,
+.vehicle-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.vehicle-table th {
+  background-color: #f2f2f2;
+}
+
+.select-button,
+.unselect-button,
+.assign-button {
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.select-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.unselect-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.assign-button {
+  background-color: #2196f3;
+  color: white;
+}

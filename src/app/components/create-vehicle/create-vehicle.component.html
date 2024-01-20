@@ -1,0 +1,47 @@
+<app-menu-bar></app-menu-bar>
+<div class="container">
+  <div class="main-content">
+    <h1>Crear vehiculo</h1>
+
+    <form [formGroup]="createVehicleForm" (ngSubmit)="onCreateVehicle()" class="vehicle-form">
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input type="number" formControlName="id" placeholder="Id" maxlength="4" />
+        <div class="error-messages">
+          <mat-error *ngIf="shouldShowError('id', 'required')">El id es requerido</mat-error>
+          <mat-error *ngIf="shouldShowError('id', 'min')">Solo valores positivos</mat-error>
+          <mat-error *ngIf="shouldShowError('id', 'maxlength')">Hasta 4 caracteres permitidos</mat-error>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="plate">Placa</label>
+        <input type="text" formControlName="plate" placeholder="Placa" />
+        <div class="error-messages">
+          <mat-error *ngIf="shouldShowError('plate', 'required')">La placa es requerida</mat-error>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="model">Modelo</label>
+        <input type="text" formControlName="model" placeholder="Modelo" />
+        <div class="error-messages">
+          <mat-error *ngIf="shouldShowError('model', 'required')">El modelo es requerido</mat-error>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ability">Capacidad (KG)</label>
+        <input type="number" formControlName="ability" placeholder="Capacidad" />
+        <div class="error-messages">
+          <mat-error *ngIf="shouldShowError('ability', 'required')">La capacidad es requerida</mat-error>
+          <mat-error *ngIf="shouldShowError('id', 'min')">
+            Solo valores positivos
+          </mat-error>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-button">Crear conductor</button>
+    </form>
+  </div>
+</div>
