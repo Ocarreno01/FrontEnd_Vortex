@@ -44,11 +44,9 @@ export class UnassignDriverComponent implements OnInit {
   }
 
   public async onUnassignVehicle() {
-    console.log('selectedDriver', this.selectedDriver);
     if (!this.selectedDriver) {
       return alert('Por favor seleccione el conductor');
     }
-    console.log('this.selectedVehicleIds', this.selectedVehicleIds);
     if (this.selectedVehicleIds.length === 0) {
       return alert('Por favor seleccione al menos un vehiculo');
     }

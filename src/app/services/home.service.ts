@@ -21,7 +21,6 @@ export class HomeService {
       })
       .pipe(
         map((response) => {
-          console.log('response', response);
           return response || false;
         }),
         catchError(() => {
@@ -36,7 +35,6 @@ export class HomeService {
       })
       .pipe(
         map((response) => {
-          console.log('response', response);
           return response || false;
         }),
         catchError(() => {
@@ -103,7 +101,6 @@ export class HomeService {
       )
       .pipe(
         map((response) => {
-          console.log('response', response);
           return response || false;
         }),
         catchError(() => {
@@ -126,7 +123,6 @@ export class HomeService {
       )
       .pipe(
         map((response) => {
-          console.log('response', response);
           return response || false;
         }),
         catchError(() => {

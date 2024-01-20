@@ -57,9 +57,7 @@ export class CreateVehicleComponent implements OnInit {
         ability: `${this.createVehicleForm.value.ability} KG`,
         model: this.createVehicleForm.value.model,
       };
-      console.log('vehicle', vehicle);
       this.homeService.createNewVehicle(vehicle).subscribe((response) => {
-        console.log('response', response);
         if (response && response.status) {
           alert('Vehiculo creado exitosamente');
           this.resetForm();

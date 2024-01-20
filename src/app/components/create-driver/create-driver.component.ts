@@ -63,7 +63,6 @@ export class CreateDriverComponent implements OnInit {
         address: this.createDriverForm.value.address,
       };
       this.homeService.createNewDriver(driver).subscribe((response) => {
-        console.log('response', response);
         if (response && response.status) {
           alert('Conductor creado exitosamente');
           this.resetForm();

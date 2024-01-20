@@ -28,11 +28,9 @@ export class AssignDriverComponent implements OnInit {
   }
 
   public async onAssingVehicles(): Promise<void> {
-    console.log('selectedDriver', this.selectedDriver);
     if (!this.selectedDriver) {
       return alert('Por favor seleccione elconductor');
     }
-    console.log('this.selectedVehicleIds', this.selectedVehicleIds);
     if (this.selectedVehicleIds.length === 0) {
       return alert('Por favor seleccione al menos un vehiculo');
     }
